@@ -17,3 +17,7 @@ Route::prefix('/admin')->name('admin.')->group(function(){
     Route::get('/dashboard', 'AdminController@dashboard')->name('home')->middleware('auth:admin');
     Route::post('/dashboard', 'AdminController@aksi')->name('home')->middleware('auth:admin');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
